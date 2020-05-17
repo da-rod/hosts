@@ -1,0 +1,83 @@
+{
+    "whitelist": [
+        {
+            "name": "dshield.org",
+            "urls": [
+                "https://dshield.org/feeds/suspiciousdomains_whitelist_approved.txt"
+            ],
+            "format": "domain",
+            "exclude": [
+                "Site"
+            ]
+        },
+        {
+            "name": "github.com/anudeepND/whitelist",
+            "urls": [
+                "https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt"
+            ],
+            "format": "domain",
+            "exclude": []
+        }
+    ],
+    "blacklist": [
+        {
+            "name": "github.com/StevenBlack/hosts",
+            "urls": [
+                "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
+            ],
+            "format": "hosts",
+            "exclude": []
+        },
+        {
+            "name": "Disconnect",
+            "urls": [
+                "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt",
+                "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt",
+                "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt",
+                "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
+            ],
+            "format": "domain",
+            "exclude": [
+                "Malware list by Disconnect",
+                "Malvertising list by Disconnect"
+            ]
+        },
+        {
+            "name": "dshield.org",
+            "urls": [
+                "https://dshield.org/feeds/suspiciousdomains_Low.txt",
+                "https://dshield.org/feeds/suspiciousdomains_Medium.txt",
+                "https://dshield.org/feeds/suspiciousdomains_High.txt"
+            ],
+            "format": "domain",
+            "exclude": [
+                "Site"
+            ]
+        },
+        {
+            "name": "Malware domains @ Utah State University",
+            "urls": [
+                "http://malwaredomains.usu.edu/immortal_domains.txt",
+                "http://malwaredomains.usu.edu/justdomains"
+            ],
+            "format": "domain",
+            "exclude": []
+        },
+        {
+            "name": "Matomo",
+            "urls": [
+                "https://raw.githubusercontent.com/matomo-org/referrer-spam-blacklist/master/spammers.txt"
+            ],
+            "format": "domain",
+            "exclude": []
+        },
+        {
+            "name": "Phishing Army",
+            "urls": [
+                "https://phishing.army/download/phishing_army_blocklist.txt"
+            ],
+            "format": "domain",
+            "exclude": []
+        }
+    ]
+}

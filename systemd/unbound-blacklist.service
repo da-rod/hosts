@@ -1,0 +1,9 @@
+[Unit]
+Description=Update unbound blacklist config
+
+[Service]
+Type=oneshot
+ExecStart=$GOBIN/hosts && unbound-control reload
+
+[Install]
+WantedBy=multi-user.target
