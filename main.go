@@ -11,8 +11,9 @@ import (
 )
 
 var (
-	in  = flag.String("sources", "$GOPATH/src/github.com/da-rod/hosts/sources.json", "file containing the sources to retrieve the lists")
-	out = flag.String("output", "/etc/unbound/unbound.conf.d/blacklist.conf", "output file name")
+	goPath = os.Getenv("GOPATH")
+	in     = flag.String("sources", goPath+"/src/github.com/da-rod/hosts/sources.json", "file containing the sources to retrieve the lists")
+	out    = flag.String("output", "/etc/unbound/unbound.conf.d/blacklist.conf", "output file name")
 )
 
 func main() {
