@@ -15,6 +15,7 @@ func buildList(s sources) map[string]bool {
 			res, err := http.Get(url)
 			if err != nil {
 				fmt.Println(err)
+				continue
 			}
 			defer res.Body.Close()
 			scanner := bufio.NewScanner(res.Body)
