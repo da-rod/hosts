@@ -13,7 +13,7 @@ import (
 var (
 	goPath = os.Getenv("GOPATH")
 	in     = flag.String("sources", goPath+"/src/github.com/da-rod/hosts/sources.json", "file containing the sources to retrieve the lists")
-	out    = flag.String("output", "/etc/unbound/unbound.conf.d/blacklist.conf", "output file name")
+	out    = flag.String("output", "/etc/unbound/unbound.conf.d/blocklist.conf", "output file name")
 )
 
 func main() {
@@ -27,23 +27,23 @@ func main() {
 	data, err := ioutil.ReadAll(f)
 	quitOnErr(err)
 
-	// Parse whitelist sources
-	var w whitelist
-	err = json.Unmarshal(data, &w)
+	// Parse safelist sources
+	var safe safelist
+	err = json.Unmarshal(data, &safe)
 	quitOnErr(err)
 
-	// Parse blacklist sources
-	var b blacklist
-	err = json.Unmarshal(data, &b)
+	// Parse blocklist sources
+	var block blocklist
+	err = json.Unmarshal(data, &block)
 	quitOnErr(err)
 
 	// Retrieve feeds and build lists
-	allow := buildList(w.Whitelist)
-	block := buildList(b.Blacklist)
+	allow := buildList(safe.List)
+	deny := buildList(block.List)
 
 	// Remove whitelisted domains from blacklist
 	var hosts []string
-	for domain := range block {
+	for domain := range deny {
 		if _, exists := allow[domain]; !exists {
 			hosts = append(hosts, domain)
 		}

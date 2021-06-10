@@ -26,7 +26,7 @@ func buildList(s sources) map[string]bool {
 				}
 				l = strings.ToLower(l)
 				if s[i].Format == "hosts" {
-					if strings.HasPrefix(l, "0.0.0.0") {
+					if strings.HasPrefix(l, "0.0.0.0") || strings.HasPrefix(l, "127.0.0.1") {
 						l = strings.Split(l, " ")[1]
 					} else {
 						continue

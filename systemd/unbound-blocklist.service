@@ -1,5 +1,5 @@
 [Unit]
-Description=Update unbound blacklist config
+Description=Update unbound blocklist config
 
 [Service]
 Type=oneshot

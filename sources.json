@@ -1,5 +1,5 @@
 {
-    "whitelist": [
+    "safelist": [
         {
             "name": "dshield.org",
             "urls": [
@@ -19,11 +19,19 @@
             "exclude": []
         }
     ],
-    "blacklist": [
+    "blocklist": [
         {
             "name": "github.com/StevenBlack/hosts",
             "urls": [
-                "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
+                "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts"
+            ],
+            "format": "hosts",
+            "exclude": []
+        },
+        {
+            "name":"https://pgl.yoyo.org/adservers/",
+            "urls": [
+                "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"
             ],
             "format": "hosts",
             "exclude": []

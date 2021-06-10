@@ -1,5 +1,5 @@
 [Unit]
-Description=Run unbound blacklist update every 4 hours
+Description=Run unbound blocklist update every 4 hours
 
 [Timer]
 OnCalendar=0/4:00:00

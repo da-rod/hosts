@@ -9,10 +9,10 @@ type source struct {
 
 type sources []source
 
-type whitelist struct {
-	Whitelist sources `json:"whitelist"`
+type safelist struct {
+	List sources `json:"safelist"`
 }
 
-type blacklist struct {
-	Blacklist sources `json:"blacklist"`
+type blocklist struct {
+	List sources `json:"blocklist"`
 }
