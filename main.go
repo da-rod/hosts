@@ -67,9 +67,10 @@ func writeHostsFile(domains []string) {
 	defer out.Close()
 
 	w := bufio.NewWriter(out)
+	w.WriteString("server:\n")
 	for _, domain := range domains {
-		w.WriteString(fmt.Sprintf("local-zone: %q redirect\n", domain))
-		w.WriteString(fmt.Sprintf("local-data: \"%s A 0.0.0.0\"\n", domain))
+		w.WriteString(fmt.Sprintf("\tlocal-zone: %q redirect\n", domain))
+		w.WriteString(fmt.Sprintf("\tlocal-data: \"%s A 0.0.0.0\"\n", domain))
 	}
 	err = w.Flush()
 	quitOnErr(err)

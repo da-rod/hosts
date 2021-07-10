@@ -8,7 +8,7 @@ It retrieves data from curated {block,safe}lists - see [sources](sources.json).
 # Installation
 
 ```bash
-$ go get github.com/da-rod/hosts
+$ go install github.com/da-rod/hosts@latest
 ```
 
 # Usage
@@ -20,6 +20,18 @@ Usage of ~/go/bin/hosts:
         output file name (default "/etc/unbound/unbound.conf.d/blocklist.conf")
   -sources string
         file containing the sources to retrieve the lists (default "$GOPATH/src/github.com/da-rod/hosts/sources.json")
+```
+
+# Docker
+
+Use the image from Docker Hub:
+```bash
+$ docker run -d --name unbound-blockhole -p 53:53/udp -p 53:53/tcp peper/unbound-blockhole
+```
+
+Or build your own image:
+```bash
+$ docker build -t unbound-blockhole .
 ```
 
 # Systemd
